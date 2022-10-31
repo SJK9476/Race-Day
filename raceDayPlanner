@@ -1,0 +1,28 @@
+// Function created to generate a random number up to and including 1000 for Adults racing in the 9.30am race.
+function generateEarlyAdultNUmber (max) {
+    return Math.floor (Math.random() * max) + 1;
+}
+
+let earlyAdultNumber = generateEarlyAdultNUmber(1000);
+// console.log(earlyAdultNumber);
+
+
+// Function created to assign a number between 1001 and 2000 for any other participants.
+function generateOtherRaceNumbers (min, max) {
+    return Math.floor (Math.random() * (max - min + 1)) + min;
+}
+
+let otherRaceNumbers = generateOtherRaceNumbers(1001, 2000);
+// console.log(otherRaceNumbers);
+
+let earlyRegistration = true;
+
+let runnerAge = 17;
+
+if ((runnerAge >= 18) && earlyRegistration) {
+    console.log(`Your race number is ${earlyAdultNumber} and your race will start at 9.30am`); 
+} else if (runnerAge >= 18)  {
+    console.log(`Your race number is ${otherRaceNumbers} and your race will start at 11.00am`);
+} else if (runnerAge < 18) {
+    console.log(`Your race number is ${otherRaceNumbers} and your race will start at 12.30pm`)
+}
